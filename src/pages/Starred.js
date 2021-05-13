@@ -1,7 +1,7 @@
 import React from 'react';
 
-const start = () => {
+const Starred = () => {
   return <div>This is Start page</div>;
 };
 
-export default start;
+export default Starred;
