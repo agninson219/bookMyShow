@@ -4,6 +4,7 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Starred from './pages/Starred';
+import Show from './pages/Show';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           <Starred />
         </Route>
         {/* for default case we use only Route same as that if switch case  */}
+        <Route exact path="/show/:id">
+          <Show />
+        </Route>
         <Route>
           <div>not found</div>
         </Route>
