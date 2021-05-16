@@ -1,5 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useReducer, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Cast from '../components/Show/Cast';
+import { Details } from '../components/Show/Details';
+import Season from '../components/Show/Season';
+import ShowMainData from '../components/Show/ShowMainData';
 import { apiGet } from '../misc/config';
 
 const reducer = (prevState, action) => {
@@ -42,7 +47,7 @@ const Show = () => {
             });
           }
         });
-      }, 2000)
+      }, 5000)
 
       .catch(err => {
         if (isMounted) {
@@ -57,7 +62,34 @@ const Show = () => {
   console.log('show', show);
   if (isLoading) return <div>Data is being loaded</div>;
   if (error) return <div>Error ocurred :{error}</div>;
-  return <div>This is the show page</div>;
+  return (
+    <div>
+      <ShowMainData
+        image={show.image}
+        name={show.name}
+        rating={show.rating}
+        summary={show.summary}
+        tags={show.genres}
+      />
+
+      <div>
+        <h2>Details</h2>
+        <Details
+          status={show.status}
+          network={show.network}
+          premiered={show.premiered}
+        />
+      </div>
+      <div>
+        <h2>Season</h2>
+        <Season seasons={show._embedded.seasons} />
+      </div>
+      <div>
+        <h2>Cast</h2>
+        <Cast cast={show._embedded.cast} />
+      </div>
+    </div>
+  );
 };
 
 export default Show;
