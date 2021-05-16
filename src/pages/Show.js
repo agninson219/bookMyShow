@@ -6,6 +6,7 @@ import { Details } from '../components/Show/Details';
 import Season from '../components/Show/Season';
 import ShowMainData from '../components/Show/ShowMainData';
 import { apiGet } from '../misc/config';
+import { InfoBlock, ShowPageWrapper } from './Show.styled';
 
 const reducer = (prevState, action) => {
   switch (action.type) {
@@ -59,11 +60,11 @@ const Show = () => {
       isMounted = false;
     };
   }, [id]);
-  console.log('show', show);
+  // console.log('show', show);
   if (isLoading) return <div>Data is being loaded</div>;
   if (error) return <div>Error ocurred :{error}</div>;
   return (
-    <div>
+    <ShowPageWrapper>
       <ShowMainData
         image={show.image}
         name={show.name}
@@ -72,14 +73,14 @@ const Show = () => {
         tags={show.genres}
       />
 
-      <div>
+      <InfoBlock>
         <h2>Details</h2>
         <Details
           status={show.status}
           network={show.network}
           premiered={show.premiered}
         />
-      </div>
+      </InfoBlock>
       <div>
         <h2>Season</h2>
         <Season seasons={show._embedded.seasons} />
@@ -88,7 +89,7 @@ const Show = () => {
         <h2>Cast</h2>
         <Cast cast={show._embedded.cast} />
       </div>
-    </div>
+    </ShowPageWrapper>
   );
 };
 
