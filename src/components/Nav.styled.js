@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Na = styled.li`
-  /* list-style-type: none; */
-`;
 export const NavList = styled.ul`
   display: flex;
   justify-content: center;
-  /* list-style: none;
-  list-style-type: none; */
+  list-style: none;
   margin: 0 0 30px;
   padding: 0;
 `;

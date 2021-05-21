@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ActorGrid from '../components/Actor/ActorGrid';
 import CustomRadio from '../components/CustomRadio';
 import Mainpagelayout from '../components/Mainpagelayout';
@@ -36,9 +36,9 @@ const Home = () => {
     }
   };
 
-  const onRadioChange = ev => {
+  const onRadioChange = useCallback(ev => {
     setSearchOption(ev.target.value);
-  };
+  }, []);
 
   const renderResults = () => {
     if (results && results.length === 0) {
