@@ -8,6 +8,8 @@
     "static/js/2.faf190f8.chunk.js": "/bookMyShow/static/js/2.faf190f8.chunk.js",
     "static/js/2.faf190f8.chunk.js.map": "/bookMyShow/static/js/2.faf190f8.chunk.js.map",
     "index.html": "/bookMyShow/index.html",
+    "service-worker.js": "/bookMyShow/service-worker.js",
+    "service-worker.js.map": "/bookMyShow/service-worker.js.map",
     "static/css/main.835b22d0.chunk.css.map": "/bookMyShow/static/css/main.835b22d0.chunk.css.map",
     "static/js/2.faf190f8.chunk.js.LICENSE.txt": "/bookMyShow/static/js/2.faf190f8.chunk.js.LICENSE.txt"
   },
